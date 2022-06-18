@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface DisneyService {
 
-    @GET("characters?page=2")
+    @GET("/characters?page=2")
     suspend fun getCharacters(): CharactersResponse
 }

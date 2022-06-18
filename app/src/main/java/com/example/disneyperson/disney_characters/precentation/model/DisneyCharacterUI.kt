@@ -1,4 +1,4 @@
-package com.example.disneyperson.disney_characters.precentation
+package com.example.disneyperson.disney_characters.precentation.model
 
 import com.example.disneyperson.disney_characters.domain.models.DisneyCharacter
 

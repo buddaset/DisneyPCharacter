@@ -2,22 +2,23 @@ package com.example.disneyperson.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelStoreOwner
+import androidx.fragment.app.commit
+import androidx.fragment.app.commitNow
 import com.example.disneyperson.R
-import com.github.johnnysc.coremvvm.presentation.BackPress
-import com.github.johnnysc.coremvvm.sl.ProvideViewModel
+import com.example.disneyperson.disney_characters.precentation.DisneyCharactersFragment
 
-class MainActivity : AppCompatActivity(), ProvideViewModel {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.commitNow {
+                add(R.id.container_fragment, DisneyCharactersFragment.newInstance())
+            }
+        }
     }
 
-    override fun <T : androidx.lifecycle.ViewModel> provideViewModel(
-        clazz: Class<T>,
-        owner: ViewModelStoreOwner
-    ): T {
-        TODO("Not yet implemented")
-    }
+
+
 }

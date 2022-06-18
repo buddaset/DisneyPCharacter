@@ -19,3 +19,6 @@ fun DisneyCharacterDto.toDomainModel() : DisneyCharacter =
 
 fun DisneyCharacterDto.toEntity(): DisneyCharacterEntity =
     DisneyCharacterEntity(id, name, imageUrl)
+
+fun List<DisneyCharacterDto>.toListEntity() : List<DisneyCharacterEntity> =
+    this.map { it.toEntity() }
